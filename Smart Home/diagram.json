@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Venkie",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -80, "left": -180, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -155.6,
+      "left": 278.4,
+      "attrs": { "horn": "cross", "hornColor": "white" }
+    }
+  ],
+  "connections": [
+    [ "dht1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "dht1:GND", "uno:GND.1", "black", [ "v32.3", "h251.7" ] ],
+    [ "dht1:SDA", "uno:2", "green", [ "v61.1", "h392" ] ],
+    [ "servo1:V+", "uno:5V", "red", [ "h-67.2", "v287.6" ] ],
+    [ "servo1:GND", "uno:GND.1", "black", [ "h-163.2", "v114.6" ] ],
+    [ "servo1:PWM", "uno:9", "orange", [ "h-115.2", "v95.6" ] ]
+  ],
+  "dependencies": {}
+}

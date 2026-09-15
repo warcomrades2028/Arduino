@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": "Venkie",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "door",
+      "top": 73.4,
+      "left": 499.2,
+      "attrs": { "color": "blue", "label": "DOOR OPEN/CLOSE" }
+    },
+    { "type": "wokwi-led", "id": "red", "top": -90, "left": 378.2, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "green",
+      "top": -80.4,
+      "left": 455,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-buzzer", "id": "buzzer", "top": -84, "left": -171, "attrs": {} },
+    { "type": "board-grove-oled-sh1107", "id": "oled", "top": 18.97, "left": -227.3, "attrs": {} },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "sw1",
+      "top": -91.6,
+      "left": 127.9,
+      "attrs": { "value": "0", "label": "SECURITY ON/OFF" }
+    }
+  ],
+  "connections": [
+    [ "sw1:1", "uno:GND.1", "black", [] ],
+    [ "sw1:2", "uno:4", "red", [] ],
+    [ "door:1.l", "uno:GND.1", "black", [ "v-76.8", "h-384.3" ] ],
+    [ "door:2.r", "uno:5", "blue", [ "v-115", "h-358.8" ] ],
+    [ "red:A", "uno:6", "red", [] ],
+    [ "red:C", "uno:GND.1", "black", [ "v19.2", "h-278.3" ] ],
+    [ "green:A", "uno:7", "green", [ "v19.2", "h-291.6" ] ],
+    [ "green:C", "uno:GND.1", "black", [] ],
+    [ "buzzer:1", "uno:8", "purple", [ "v9.6", "h316.4" ] ],
+    [ "buzzer:2", "uno:GND.1", "black", [ "v19.2", "h248.9" ] ],
+    [ "oled:VCC", "uno:5V", "red", [ "h9.6", "v105.6", "h207.4" ] ],
+    [ "oled:GND", "uno:GND.1", "black", [] ],
+    [ "oled:SDA", "uno:A4", "green", [ "v105.6", "h303" ] ],
+    [ "oled:SCL", "uno:A5", "blue", [] ]
+  ],
+  "dependencies": {}
+}
